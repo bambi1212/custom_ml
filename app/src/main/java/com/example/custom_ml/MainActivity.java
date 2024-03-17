@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
         outputTextView = findViewById(R.id.textViewOutput);
          failOrNot = findViewById(R.id.onsucces);
-        failOrNot.setText("fail");
+        failOrNot.setText("not seccses or fail");
 
 
         LocalModel localModel =
@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
                 .addOnSuccessListener(new OnSuccessListener<List<ImageLabel>>() {
                     @Override
                     public void onSuccess(List<ImageLabel> labels) {
-                        failOrNot.setText("Success");
+                        failOrNot.setText("Success :)");
 
 
                         // Task completed successfully
@@ -113,6 +113,8 @@ public class MainActivity extends AppCompatActivity {
                         // ...
                         //outputTextView.setText("FAILED");
                         e.printStackTrace();
+                        failOrNot.setText("fail :(");
+
                     }
                 });
 
