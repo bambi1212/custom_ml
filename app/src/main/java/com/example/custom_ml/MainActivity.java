@@ -4,13 +4,11 @@ import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -63,6 +61,13 @@ public class MainActivity extends AppCompatActivity {
         int drawableId = R.drawable.juice_image;
         Bitmap bitmap = BitmapFactory.decodeResource(resources, drawableId);
 
+      //  NormalizationOptions Normalioptions =
+        //        new NormalizationOptions.Builder()
+          //              .setMin(0) // Assuming pixel values are in the range [0, 255]
+                //        .setMax(255)
+              //          .setNormalized(-1.0f, 1.0f) // Normalize pixel values to [-1, 1]
+                 //       .build();
+
         // Create an InputImage object from the Bitmap only this can be proccesed
         InputImage imageToProcces = InputImage.fromBitmap(bitmap, 0);
 
@@ -70,6 +75,8 @@ public class MainActivity extends AppCompatActivity {
         ImageView imageViewXml = findViewById(R.id.imageView);
         imageViewXml.setImageBitmap(imageToProcces.getBitmapInternal());
         //end check
+
+
 
         labeler.process(imageToProcces)
                 .addOnSuccessListener(new OnSuccessListener<List<ImageLabel>>() {
@@ -141,6 +148,10 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
+
+
+
     }
     }
 
@@ -148,5 +159,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
          */
+
     }
 }

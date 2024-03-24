@@ -4,12 +4,12 @@ plugins {
 
 android {
     namespace = "com.example.custom_ml"
-    compileSdk = 34
+    compileSdk = 33
 
     defaultConfig {
         applicationId = "com.example.custom_ml"
-        minSdk = 33
-        targetSdk = 34
+        minSdk = 24
+        targetSdk = 33
         versionCode = 1
         versionName = "1.0"
 
@@ -17,7 +17,8 @@ android {
     }
     //added by me
     aaptOptions {
-        noCompress ("WasteClassificationModel.tflite");
+        noCompress +="WasteClassificationModel.tflite"
+        //noCompress("WasteClassificationModel.tflite")
         // or noCompress "lite"
     }
 
@@ -50,6 +51,7 @@ dependencies {
 
     //image classification
     implementation("com.google.mlkit:image-labeling-custom:17.0.2")
+     // implementation("com.google.android.gms:play-services-mlkit-vision:17.0.1")
 
 
 }
